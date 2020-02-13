@@ -1,0 +1,18 @@
+
+body {
+  background-image: url("paper.jpg");
+}
+
+img{
+display:block;
+margin:auto;
+}
+
+h2.sansserif {
+  font-family: Arial, Helvetica, sans-serif;
+}
+p{
+  text-shadow: 3px 2px red;
+}
+
+p.dotted {border-style: dotted;}
