@@ -5,6 +5,7 @@ suma = document.getElementById("suma")
 igual = document.getElementById("igual")
 clear = document.getElementById("clear")
 
+
 let digitos = document.getElementsByClassName("cdigito")
 
 for(i=0; i<digitos.length; i++){

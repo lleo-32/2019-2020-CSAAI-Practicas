@@ -1,16 +1,17 @@
 div {
   width: 100%;
-  max-width: 280px;
-  border: solid 3px #EFA7DC;
+  max-width: 350px;
+  border: solid 3px #E05DBE;
   padding:10px;
   margin: auto;
+  margin-top:50px;
   background: pink;
 }
 button{
   background-color: #EFA7DC;
   border: 1px solid pink;
   width: 50px;
-  color: #9E3182;
+  color: #AA1C85;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
@@ -18,8 +19,13 @@ button{
   font-size: 16px;
   border-radius: 12%;
 }
-.cdigito{
-  background-color: ;
+#multi,#div,#suma,#resta,#punto,#clear,#igual {
+    background-color: #E05DBE;
+
+}
+body{
+  background-color:white
+
 }
 
 p{
