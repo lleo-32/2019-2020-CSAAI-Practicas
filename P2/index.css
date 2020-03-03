@@ -1,0 +1,34 @@
+div {
+  width: 100%;
+  max-width: 280px;
+  border: solid 3px #EFA7DC;
+  padding:10px;
+  margin: auto;
+  background: pink;
+}
+button{
+  background-color: #EFA7DC;
+  border: 1px solid pink;
+  width: 50px;
+  color: #9E3182;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 12%;
+}
+.cdigito{
+  background-color: ;
+}
+
+p{
+background-color: white;
+text-align: right;
+height: 30px;
+padding-right: 20px;
+padding-top: 10px;
+color: #9E3182;
+
+
+}

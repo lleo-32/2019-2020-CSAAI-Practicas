@@ -3,52 +3,44 @@
   <head>
     <meta charset="utf-8">
     <title>Calculadora</title>
+    <link rel="stylesheet" href="index.css">
     <script src="index.js" defer></script>
-    <style>
-      table,td {
-  border: 2px solid pink;
-  border-collapse: collapse;
-}
-th, td {
-  padding: 5px;
-  text-align: left;
-}
-</style>
   </head>
 
   <body>
-    <table>
-  <tr>
-    <td colspan="4">0</td>
-  </tr>
-  <tr>
-    <td><button onclick="...">1</td>
-    <td><button onclick="...">2</td>
-    <td><button onclick="...">3</td>
-    <td><button onclick="...">+</td>
-  </tr>
-  <tr>
-      <td><button onclick="...">4</td>
-      <td><button onclick="...">5</td>
-      <td><button onclick="...">6</td>
-      <td><button onclick="...">-</td>
-    </tr>
-    <tr>
-      <td><button onclick="...">7</td>
-      <td><button onclick="...">8</td>
-      <td><button onclick="...">9</td>
-      <td><button onclick="...">*</td>
-    </tr>
-    <tr>
-        <td colspan="34"><button onclick="...">0</td>
+    <div>
+    <p id="display">0</p>
+    <button class="cdigito" value="1">1</button>
+    <button class="cdigito" value="2">2</button>
+    <button class="cdigito" value="3">3</button>
+    <button id="punto" value=".">.</button>
+    <br>
+    <br>
+    <button class="cdigito" value="4">4</button>
+    <button class="cdigito" value="5">5</button>
+    <button class="cdigito" value="6">6</button>
+    <button id="igual">=</button>
+    <br>
+    <br>
+    <button class="cdigito" value="7">7</button>
+    <button class="cdigito" value="8">8</button>
+    <button class="cdigito" value="9">9</button>
+    <br>
+    <br>
 
-      </tr>
-      <tr>
-        <td colspan="2"><button onclick="...">AC</td>
-        <td><button onclick="...">.</td>
-        <td><button onclick="...">=</td>
-      </tr>
-</table>
+    <button id="suma" value="+">+</button>
+    <button class="cdigito" value="0">0</button>
+    <button id="clear">AC</button>
+
+    <br>
+    <br>
+    <button id="multi" value="*">x</button>
+    <button id="resta" value="-">-</button>
+    <button id="div" value="/">/</button>
+
+
+  </div>
+
 
   </body>
 </html>
