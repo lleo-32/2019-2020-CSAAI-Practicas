@@ -10,6 +10,10 @@ class Bola {
     this.x_ini = 100;
     this.y_ini = 200;
 
+    //posición saque derecho
+    this.x_ini_d = 550;
+    this.y_ini_d = 200;
+
     //-- Posicion generica de la bola
     this.x = 0;
     this.y = 0;
@@ -17,6 +21,11 @@ class Bola {
     //-- Velocidad inicial de la bola
     this.vx_ini = 6;
     this.vy_ini = 3;
+
+    //-- Velocidad saque derecha
+    this.vx_ini_d = -6;
+    this.vy_ini_d = 3;
+
 
     //-- Velocidad genérica de la bola
     //-- Inicialmente a cero
@@ -41,6 +50,14 @@ class Bola {
     //-- Inicializa la bola: A su posicion inicial
     this.x = this.x_ini;
     this.y = this.y_ini;
+    this.vx = 0;
+    this.vy = 0;
+  }
+
+  init2() {
+    //-- Inicializa la bola: A su posicion inicial
+    this.x = this.x_ini_d;
+    this.y = this.y_ini_d;
     this.vx = 0;
     this.vy = 0;
   }

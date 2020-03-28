@@ -11,14 +11,18 @@ console.log(`canvas: Anchura: ${canvas.width}, Altura: ${canvas.height}`);
 const ctx = canvas.getContext("2d");
 
 //-- Obtener Sonidos
-const sonido_raqueta = new Audio("pong-raqueta.mp3");
-const sonido_rebote = new Audio("pong-rebote.mp3");
+const sonido_raqueta = new Audio("Bing_1.mp3");
+const sonido_rebote = new Audio("rebote.mp3");
+const sonido_perder = new Audio("perder.mp3");
 
 //-- Estados del juego
 const ESTADO = {
   INIT: 0,
+  //estado saque izquierda
   SAQUE: 1,
   JUGANDO: 2,
+  //estado saque derecha
+  DER: 3,
 }
 
 //-- Variable de estado
@@ -104,27 +108,34 @@ function animacion()
   //-- Si es así, se cambia de signo la velocidad, para
   // que "rebote" y vaya en el sentido opuesto
   if (bola.x >= canvas.width) {
-    //-- Hay colisión. Cambiar el signo de la bola
-    bola.vx = bola.vx * -1;
 
-
+    estado = ESTADO.DER;
+    bola.init();
+    console.log("Tanto!!!!");
     //-- Reproducir sonido
-    sonido_rebote.currentTime = 0;
-    sonido_rebote.play();
+    sonido_perder.currentTime = 0;
+    sonido_perder.play();
+    return;
+
   }
 
   //-- Si llega al límite izquierdo, hemos perdido
   //-- pasamos al estado de SAQUE
   if (bola.x <= bola.size) {
+
      estado = ESTADO.SAQUE;
      bola.init();
      console.log("Tanto!!!!");
+     //-- Reproducir sonido
+     sonido_perder.currentTime = 0;
+     sonido_perder.play();
      return;
   }
 
   //-- Comprobar si hay colisión con la raqueta izquierda
   if (bola.x >= raqI.x && bola.x <=(raqI.x + raqI.width) &&
       bola.y >= raqI.y && bola.y <=(raqI.y + raqI.height)) {
+
     bola.vx = bola.vx * -1;
 
     //-- Reproducir sonido
@@ -132,10 +143,19 @@ function animacion()
     sonido_raqueta.play();
   }
 
+  if (bola.y >= canvas.height){
+      bola.vy = bola.vy * -1;
+    } else if (bola.y <= 0){
+      bola.vy = bola.vy * -1;
+    }
+
   //-- Comprobar si hay colisión con la raqueta derecha
   if (bola.x >= raqD.x && bola.x <=(raqD.x + raqD.width) &&
       bola.y >= raqD.y && bola.y <=(raqD.y + raqD.height)) {
     bola.vx = bola.vx * -1;
+    //-- Reproducir sonido
+    sonido_raqueta.currentTime = 0;
+    sonido_raqueta.play();
   }
 
   //-- Actualizar coordenada x de la bola, en funcion de
@@ -198,11 +218,30 @@ window.onkeydown = (e) => {
         sonido_raqueta.currentTime = 0;
         sonido_raqueta.play();
 
-        //-- Llevar bola a su posicion incicial
+        //-- Llevar bola a su posicion incicial izquierda
         bola.init();
 
         //-- Darle velocidad
         bola.vx = bola.vx_ini;
+        bola.vy = bola.vy_ini;
+
+        //-- Cambiar al estado de jugando!
+        estado = ESTADO.JUGANDO;
+
+        return false;
+      }
+
+      if (estado == ESTADO.DER) {
+        //-- Reproducir sonido
+        sonido_raqueta.currentTime = 0;
+        sonido_raqueta.play();
+
+        //-- Llevar bola a su posicion derecha
+        bola.init2();
+
+        //-- Darle velocidad
+        bola.vx = bola.vx_ini_d;
+        bola.vy = bola.vy_ini_d;
 
         //-- Cambiar al estado de jugando!
         estado = ESTADO.JUGANDO;
