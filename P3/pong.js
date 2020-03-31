@@ -284,5 +284,7 @@ stop.onclick = () => {
   //-- Volver al estado inicial
   estado = ESTADO.INIT;
   bola.init();
+  puntos_derecha = 0;
+  puntos_izquierda = 0;
   start.disabled = false;
 }
