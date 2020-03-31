@@ -1,8 +1,29 @@
 body {
-    background-color: lightblue;
+    background-color: #6B6B6B
 }
 
-/* Estilo para el canvas: Negro */
+
 #canvas {
   background-color: black;
+  display : block;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 40px;
+}
+
+
+button{
+  border-radius: 12px;
+  font-size: 30px;
+  border: 2px solid black;
+
+}
+
+.center{
+  text-align: center;
+
 }
