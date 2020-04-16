@@ -1,45 +1,84 @@
 console.log("Ejecutando JS...");
 
 //----- Obtener elemento de video y configurarlo
+const video = document.getElementById("video")
+video.width=500;  //-- Tamaño de la pantalla de video
+video.height=500;
+
+//----- Obtener elemento de video y configurarlo
 const video1 = document.getElementById("video1")
-video1.width=100;  //-- Tamaño de la pantalla de video
-video1.height=100;
+video1.width=130;  //-- Tamaño de la pantalla de video
+video1.height=130;
+video1.src="https://github.com/lleo-32/Videos-practica4/raw/master/video1.mp4";
 
 const video2 = document.getElementById("video2")
-video2.width=100;  //-- Tamaño de la pantalla de video
-video2.height=100;
+video2.width=130;  //-- Tamaño de la pantalla de video
+video2.height=130;
+video2.src="https://github.com/lleo-32/Videos-practica4/raw/master/video-2.mp4";
 
 const video3 = document.getElementById("video3")
-video3.width=100;  //-- Tamaño de la pantalla de video
-video3.height=100;
+video3.width=130;  //-- Tamaño de la pantalla de video
+video3.height=130;
+video3.src="https://github.com/lleo-32/Videos-practica4/raw/master/video3.mp4";
+
+const imagen = document.getElementById("imagen")
+imagen.width = 130;
+imagen.height = 115;
+
+
 
 //-- Imagen estática a mostrar cuando el video no
 //-- ha arrancado
-video1.poster="https://github.com/myTeachingURJC/2019-2020-CSAAI/raw/master/L10/test.png";
-video2.poster="https://github.com/myTeachingURJC/2019-2020-CSAAI/raw/master/L10/test.png";
-video3.poster="https://github.com/myTeachingURJC/2019-2020-CSAAI/raw/master/L10/test.png";
+video.poster="portada.jpg";
+
 
 //-- Obtener los botones
 const play = document.getElementById("play")
 const stop = document.getElementById("stop")
 
 //-- Función de retrollamada del botón de ver
-play.onclick = () => {
+fuente1.onclick = () => {
   console.log("Click!");
-  video1.src="https://gsyc.urjc.es/jmplaza/csaai/realizador-fuente1.mp4"
-  video1.play();
+  video.src=video1.src;
+  video.currentTime = video1.currentTime;
+  video1.style.border = "4px solid red"
+ video2.style.border = "0"
+ video3.style.border = "0"
+ imagen.style.border = "0"
+  video.play();
 };
 
-play2.onclick = () => {
+fuente2.onclick = () => {
   console.log("Click!");
-  video2.src="https://gsyc.urjc.es/jmplaza/csaai/realizador-fuente2.mp4"
-  video2.play();
+  video.src=video2.src;
+  video.currentTime = video2.currentTime;
+  video1.style.border = "0";
+  video2.style.border = "4px solid red";
+  video3.style.border = "0";
+  imagen.style.border = "0";
+  video.play();
 };
 
-play3.onclick = () => {
+fuente3.onclick = () => {
   console.log("Click!");
-  video3.src="https://gsyc.urjc.es/jmplaza/csaai/realizador-fuente3.mp4"
-  video3.play();
+  video.src=video3.src;
+  video.currentTime = video3.currentTime;
+  video1.style.border = "0";
+  video2.style.border = "0";
+  video3.style.border = "4px solid red";
+  imagen.style.border = "0";
+  video.play();
+};
+
+fuente4.onclick = () => {
+  console.log("Click!");
+  video.src = null;
+  video.poster = imagen.src;
+  video1.style.border = "0";
+  video2.style.border = "0";
+  video3.style.border = "0";
+  imagen.style.border = "4px solid red";
+
 };
 
 //-- Funcion de retrollamada del boton de parar
