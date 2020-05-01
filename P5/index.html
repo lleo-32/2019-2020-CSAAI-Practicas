@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Filtro 5</title>
+    <link rel="stylesheet" href="index.css">
+    <link href='https://fonts.googleapis.com/css?family=Acme' rel='stylesheet'>
+    <script src="index.js" defer></script>
+  </head>
+  <body>
+
+
+    <div class="img1">
+      <p>IMAGEN ORIGINAL </p>
+      <img src="tangana.jpg" id="imagesrc">
+    </div>
+
+  <div class="img2">
+    <p> IMAGEN MANIPULADA </p>
+    <canvas id="canvas"></canvas>
+  </div>
+
+
+  <center>
+    <div class="deslizadores">
+
+    <p>ESTABLECE EL UMBRAL DE ROJO:</p>
+    <input type="range" id="deslizador_R" min="0" max="255" value="255"/>
+    <p id="range_value_R">00</p>
+
+
+    <p>ESTABLECE EL UMBRAL DE VERDE:</p>
+    <input type="range" id="deslizador_G" min="0" max="255" value="255"/>
+    <p id="range_value_G">00</p>
+
+    <p>ESTABLECE EL UMBRAL DE AZUL:</p>
+    <input type="range" id="deslizador_B" min="0" max="255" value="255"/>
+    <p id="range_value_B">00</p>
+
+
+    <button id="grises">GRAY</button>
+    <button id="especular">MIRROR</button>
+</div>
+  <center/>
+
+
+
+  </body>
+</html>

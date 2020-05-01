@@ -1,0 +1,30 @@
+body {
+  background-image: url("idolo.jpg");
+  font-family: 'Acme';
+  color: white;
+}
+
+.img1{
+  margin-left: 140px;
+  float:left;
+}
+
+.img2{
+  margin-left: 100px;
+  float:right;
+  margin-top: 10px;
+  margin-right: 130px;
+}
+
+#grises,#especular{
+  width: 100px;
+  height: 50px;
+  margin-right: 70px;
+  background-color: #555555;
+  font-family: 'Acme'
+}
+
+.deslizadores{
+  margin-top: 150px;
+
+}
